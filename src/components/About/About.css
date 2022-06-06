@@ -33,13 +33,13 @@
     /* top: 2%; */
     margin: 1vh 8vw 50px;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 1.5em;
 }
 
 .conteudo__sobre p {
     text-align: justify;
     /* top: 15%; */
     margin: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     word-wrap:normal; 
 }

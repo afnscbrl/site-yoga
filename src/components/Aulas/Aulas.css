@@ -31,7 +31,7 @@
     text-align: center;
     margin: 2vh 13vw 5px;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 1.5em;
 
 }
 
@@ -39,6 +39,6 @@
     text-align: justify;
     /* top: 15%; */
     margin: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2em;
     word-wrap:normal; 
 }
