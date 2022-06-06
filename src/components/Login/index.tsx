@@ -8,9 +8,12 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Button } from '@mui/material';
+
+import "./Login.css"
 
 interface State {
     amount: string;
@@ -47,15 +50,34 @@ export default function Login() {
     };
 
     return (
-        <Box>
+        <Box className="conteudo__login">
 
             <h2>Login</h2>
-            <form action="" method="post">
+            <div className='formulario'>
 
-                <TextField required id="outlined-basic" label="Login" variant="outlined" />
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+
+                    <InputLabel htmlFor="outlined-adornment-login">Login</InputLabel>
+                    <OutlinedInput
+
+                        id="outlined-adornment-login"
+                        type="text"
+                        startAdornment={
+                            <InputAdornment position="start">
+                                <AccountCircleIcon />
+                            </InputAdornment>
+                        }
+                        label="Login"
+                    />
+
+                </FormControl>
+
+                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+
+
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
+
                         id="outlined-adornment-password"
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password}
@@ -73,8 +95,24 @@ export default function Login() {
                             </InputAdornment>
                         }
                         label="Password"
-                    /></FormControl>
-            </form>
+                    />
+                    <Button
+                        sx={{ m: 1 }}
+                        type="submit"
+                        variant="contained"
+                        size="small">
+                       
+                        Login
+                    </Button>
+                </FormControl>
+            </div>
+                <Button
+                    sx={{ m: 1 }}
+                    type="submit"
+                    variant="outlined">
+                    Se inscreva
+                </Button>
+
         </Box>
     )
 }

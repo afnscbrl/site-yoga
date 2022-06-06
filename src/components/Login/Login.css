@@ -1,0 +1,21 @@
+.conteudo__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    min-height: 100vh;
+    margin: 10vh 10vw 0;
+    color: #a33b12;
+    background-color: #e9dac9;
+}
+
+.conteudo__login h2 {
+    margin: 15vh 0 10vh;
+       
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
