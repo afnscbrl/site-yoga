@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
+import Header from './components/Header';
+import About from './components/About';
+import Aulas from './components/Aulas'
+import Drawer from './components/Drawer'
+import Login from './components/Login';
 import './App.css';
+// import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { NavTheme } from './themes';
+import { ThemeProvider } from '@mui/material';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ThemeProvider theme={NavTheme}>
+      <Router>
+
+        <Header />
+        <Drawer />
+        <Routes>
+          <Route path='/Inicio' element={<About/>} />
+          <Route path='/Aulas' element={<Aulas/>}/>
+          <Route path='/Login' element={<Login/>} />
+        </Routes>
+
+      </Router>
+    </ThemeProvider>
+
+
   );
 }
 
