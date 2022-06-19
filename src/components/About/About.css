@@ -39,7 +39,8 @@
 .conteudo__sobre p {
     text-align: justify;
     /* top: 15%; */
+    padding-top: 10px;
     margin: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1em;
     word-wrap:normal; 
 }
