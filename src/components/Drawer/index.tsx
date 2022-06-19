@@ -43,7 +43,7 @@ function Drawer() {
   ) => {
     setSelectedIndex(index);
     setAnchorEl(null);
-    if(option === 'Area do Aluno') {
+    if (option === 'Area do Aluno') {
       navigate('/Login')
     } else {
       console.log(option)
@@ -79,9 +79,11 @@ function Drawer() {
       <Button>
         <MailOutlineIcon fontSize='large' />
       </Button>
-      
-      <Button>
-        <WhatsAppIcon fontSize='large' />
+
+      <Button sx={{color: 'primary'}}>
+        <a className="whatsapp-link" href="https://web.whatsapp.com/send?phone=5585981198176" target="_blank" rel="noreferrer">
+          <WhatsAppIcon fontSize='large' />
+        </a>
       </Button>
 
       <Menu
