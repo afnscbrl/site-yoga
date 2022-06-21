@@ -4,6 +4,7 @@ import './CardAula.css'
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { useNavigate } from 'react-router-dom';
 
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 
 export default function CardsAula({ id, titulo, texto, modalTexto }: Props) {
 
-
+    const navigate = useNavigate()
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -28,7 +29,7 @@ export default function CardsAula({ id, titulo, texto, modalTexto }: Props) {
             </h3>
 
             {texto}
-            
+
             <Button variant="contained"
                 onClick={handleOpen}
                 size="large"
@@ -51,7 +52,10 @@ export default function CardsAula({ id, titulo, texto, modalTexto }: Props) {
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         {modalTexto}
                     </Typography>
-                    <Button sx={{fontWeight: 'bold'}}>
+                    <Button
+                        sx={{ fontWeight: 'bold' }}
+                        onClick={() => navigate('/Registrar')}
+                    >
                         Inscreva-se
                     </Button>
                 </Box>
