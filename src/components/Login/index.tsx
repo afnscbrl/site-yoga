@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
 
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -16,23 +17,19 @@ import { Button } from '@mui/material';
 import "./Login.css"
 
 interface State {
-    amount: string;
     password: string;
-    weight: string;
-    weightRange: string;
     showPassword: boolean;
 }
 
 
 export default function Login() {
+    let navigate = useNavigate()
 
     const [values, setValues] = React.useState<State>({
-        amount: '',
         password: '',
-        weight: '',
-        weightRange: '',
         showPassword: false,
     });
+
     const handleChange =
         (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
             setValues({ ...values, [prop]: event.target.value });
@@ -57,7 +54,7 @@ export default function Login() {
 
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
 
-                    <InputLabel htmlFor="outlined-adornment-login">Login</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-login">Email</InputLabel>
                     <OutlinedInput
 
                         id="outlined-adornment-login"
@@ -67,7 +64,7 @@ export default function Login() {
                                 <AccountCircleIcon />
                             </InputAdornment>
                         }
-                        label="Login"
+                        label="Email"
                     />
 
                 </FormControl>
@@ -75,7 +72,7 @@ export default function Login() {
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
 
 
-                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
                     <OutlinedInput
 
                         id="outlined-adornment-password"
@@ -101,17 +98,20 @@ export default function Login() {
                         type="submit"
                         variant="contained"
                         size="small">
-                       
+
                         Login
                     </Button>
                 </FormControl>
             </div>
-                <Button
-                    sx={{ m: 1 }}
-                    type="submit"
-                    variant="outlined">
-                    Se inscreva
-                </Button>
+            <Button
+                sx={{ m: 1 }}
+                type="submit"
+                variant="outlined"
+                onClick={() => navigate('/Registrar')}
+            >
+
+                Se inscreva
+            </Button>
 
         </Box>
     )
