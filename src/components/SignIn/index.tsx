@@ -25,7 +25,7 @@ export default function SingIn() {
             <h2>Inscreva-se</h2>
             <div className='formulario_signin'>
                 <div className='lines signin_line1'>
-                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" required>
                         <p>Nome</p>
                         <OutlinedInput
                             id="outlined-adornment-nome"
@@ -35,7 +35,7 @@ export default function SingIn() {
                     </FormControl>
                 </div>
                 <div className='lines signin_line2'>
-                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" required>
 
                         <p>Email</p>
                         <OutlinedInput
@@ -46,7 +46,7 @@ export default function SingIn() {
                     </FormControl>
                 </div>
                 <div className='lines signin_line3'>
-                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" required>
                         <p>Telefone</p>
                         <OutlinedInput
                             id="outlined-adornment-phone"
@@ -54,7 +54,7 @@ export default function SingIn() {
                         />
 
                     </FormControl>
-                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" required>
                         <p>Data de Nascimento</p>
                         <OutlinedInput
                             id="outlined-adornment-nascimento"
@@ -67,7 +67,7 @@ export default function SingIn() {
 
                 </div>
                 <div className="lines signin_line4">
-                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" required>
                         <p>Senha</p>
                         <OutlinedInput
 
@@ -76,7 +76,7 @@ export default function SingIn() {
 
                         />
                     </FormControl>
-                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" required>
                         <p>Repetir Senha</p>
                         <OutlinedInput
 
@@ -86,7 +86,7 @@ export default function SingIn() {
                     </FormControl>
                 </div>
                 <div className='lines signin_line5'>
-                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" required>
                         <p>Pacote</p>
                         <Select
                             id="demo-simple-select-helper"
@@ -96,6 +96,7 @@ export default function SingIn() {
                             <MenuItem value="Personal">Personal</MenuItem>
                             <MenuItem value="Vinyasa">Vinyasa</MenuItem>
                             <MenuItem value="Hatha Yoga">Hatha Yoga</MenuItem>
+                            <MenuItem value="Yoga Lunar">Yoga Lunar</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
