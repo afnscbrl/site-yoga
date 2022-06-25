@@ -1,0 +1,17 @@
+
+.aspas_depo{
+    margin: 0;
+    width: 10%;
+}
+
+.texto_depo {
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    margin: 2px 0;
+}
+
+.aluna_depo {
+    font-size: .8em;
+    font-weight: bold;
+    font-family: 'Julius Sans One', sans-serif;
+}
