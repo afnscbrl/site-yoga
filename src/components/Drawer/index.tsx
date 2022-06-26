@@ -43,10 +43,12 @@ function Drawer() {
   ) => {
     setSelectedIndex(index);
     setAnchorEl(null);
+    if (option === 'Inicio') {
+      navigate('/')
+    }
     if (option === 'Area do Aluno') {
       navigate('/Login')
     } else {
-      console.log(option)
       navigate(`/${option}`)
     }
 
@@ -71,7 +73,7 @@ function Drawer() {
       </Button>
 
       <a href="https://www.instagram.com/raquelaraujo.yoga/" target="_blank" rel="noreferrer">
-        <Button>
+        <Button onClick={()=> navigate('/Contato')}>
           <InstagramIcon fontSize='large' />
         </Button>
       </a>
