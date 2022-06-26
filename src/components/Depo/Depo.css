@@ -12,7 +12,7 @@
 
 .depos__h2 {
     text-align: center;
-    margin-left: 5vw;
+    margin-left: 0;
     /* margin: 2vh 13vw 5px; */
     font-weight: bold;
     font-size: 1.5em;
@@ -21,7 +21,7 @@
 
 .cards_depo {
     width: 100%;
-    margin: 5vh 0 0 5vw;
+    margin: 5vh 0 0 2vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

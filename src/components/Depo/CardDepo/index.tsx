@@ -48,14 +48,14 @@ export default function CardDepo({ previa, depoimento, aluna }: Props) {
         onClick={handleOpen}
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           justifyContent: 'space-between',
           p: 1,
           m: 0,
           backgroundColor: 'rgba(163, 59, 18, 0.05)',
           color: '#a33b12'
         }} elevation={3}>
-        <img className="aspas_depo" src={aspas} />
+        <img className="aspas_depo" src={aspas} alt="Aspas-Icone"/>
 
         <p className="texto_depo">
           {previa}
