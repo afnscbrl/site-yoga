@@ -21,10 +21,11 @@
 
 .cards_depo {
     width: 100%;
-    margin: 5vh 0 0 2vw;
+    margin: 10vh 0 0 2vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 }
 
 .cards_depo:hover {

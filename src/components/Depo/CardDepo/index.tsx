@@ -17,25 +17,14 @@ export default function CardDepo({ previa, depoimento, aluna }: Props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-
-        '& > :not(style)': {
-          m: [1, 2, 5, 2],
-          width: 256,
-          height: 128,
-        },
-      }}
-    >
+    <Box className='cardDepo' >
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-depoimento"
         aria-describedby="modal-modal-aluna"
       >
-        <Box className='modal'>
+        <Box className='modal modalDepo'>
           <Typography id="modal-modal-depoimento">
             {depoimento}
           </Typography>
@@ -48,7 +37,7 @@ export default function CardDepo({ previa, depoimento, aluna }: Props) {
         onClick={handleOpen}
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           justifyContent: 'space-between',
           p: 1,
           m: 0,

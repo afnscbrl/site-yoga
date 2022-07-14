@@ -73,16 +73,19 @@ function Drawer() {
       </Button>
 
       <a href="https://www.instagram.com/raquelaraujo.yoga/" target="_blank" rel="noreferrer">
-        <Button onClick={()=> navigate('/Contato')}>
+        <Button>
           <InstagramIcon fontSize='large' />
         </Button>
       </a>
 
-      <Button>
+      <Button onClick={() => {
+        navigate('/Contato')
+        window.scrollTo({ top: window.screen.height, behavior: 'smooth' })
+      }}>
         <MailOutlineIcon fontSize='large' />
       </Button>
 
-      <Button sx={{color: 'primary'}}>
+      <Button sx={{ color: 'primary' }}>
         <a className="whatsapp-link" href="https://web.whatsapp.com/send?phone=5585981198176" target="_blank" rel="noreferrer">
           <WhatsAppIcon fontSize='large' />
         </a>
