@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Depo from './components/Depo';
 import SignIn from './components/SignIn'
 import Contato from './components/Email'
+import Anamnese from './components/Anamnese'
 import './App.css';
 // import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import { NavTheme } from './themes';
@@ -32,6 +33,7 @@ function App() {
           <Route path='/Depoimentos' element={<Depo/>} />
           <Route path='/Contato' element={<Contato/>} />
           <Route path='/Inicio' element={<Navigate to='/'/>}/>
+          <Route path='/Anamnese' element={<Anamnese/>}/>
         </Routes>
 
       </Router>
