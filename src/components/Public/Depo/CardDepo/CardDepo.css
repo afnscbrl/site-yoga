@@ -1,0 +1,47 @@
+.cardDepo {
+    display: 'flex';
+    flex-wrap: 'wrap';
+    margin: 5px 20px 20px 15px;
+    width: 25%;
+}
+
+
+
+.aspas_depo{
+    margin: 0;
+    width: 10%;
+    height: 25%;
+}
+
+.texto_depo {
+    text-align: justify;
+    text-indent: 25px;
+    padding: 0 5px 0 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    margin: 2px 0;
+    min-height: 90px;
+}
+
+.aluna_depo {
+    font-size: .8em;
+    font-weight: bold;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+}
+
+.modalDepo {
+    padding: 50px;
+}
+
+@media (max-width: 600px) {
+    .cardDepo {
+        width: 90%;
+        margin-bottom: 30px;
+
+    }
+    
+    .modalDepo {
+        width: 70vw;
+    }
+}

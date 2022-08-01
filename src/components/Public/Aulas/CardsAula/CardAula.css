@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kalam&family=Poppins:wght@100;200&family=Shadows+Into+Light&family=Varela&display=swap');
+
+.aulas__cardaulas {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0.3vmax 0.3vmax 0.3vmax grey;
+    text-align: justify;
+    margin: 10px 2vw 5vh;
+    width: 250px;
+    min-height: 40vh;
+    padding: 1vh 1vw;
+    border-radius: 1vmin;
+    opacity: .9;
+    font-family: 'Julius Sans One', sans-serif;
+    
+}
+
+.aulas__cardaulas h3 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+.aulas__cardaulas p {
+    font-size: 1em;
+    height: 90%;
+    width: 100%;
+    text-align: center;
+    color:transparent;
+}
+
+.aulas__cardaulas:hover {
+    color: black;
+}
+
+#Vinyasa:hover {
+    color: black;
+    background: transparent;
+}
+
+#Vinyasa p:hover{
+    color: black;
+    transition: 800ms;
+}
+
+#hathayoga p:hover{
+    color: black;
+    transition: 800ms;
+}
+
+#hathayoga:hover {
+    color: black;
+    background: transparent;
+}
+
+#Lunar p:hover{
+    color: black;
+    transition: 800ms;
+}
+
+#Lunar:hover {
+    color: black;
+    background: transparent;
+}
+
+#Personal {
+    color: #a33b12
+}
+
+#Personal:hover {
+    color: black;
+    background: transparent;
+}
+
+#Personal p:hover{
+    color: black;
+    transition: 800ms;
+}
+
+.modal {
+    color:  #a33b12;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 40vw;
+    background-color: #fafafa;
+    border: 1px solid #a33b12;
+    border-radius: 1vmin;
+    box-shadow: 24;
+    padding: 10px;
+    opacity: .9;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: scroll;
+    
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+@media (max-width: 600px) {
+    .modal{
+        width: 80vw;
+        
+    }
+}
+

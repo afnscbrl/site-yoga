@@ -1,0 +1,34 @@
+.conteudo__signin {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    min-height: 100vh;
+    margin: 10vh 10vw 0;
+    color: #a33b12;
+    background-color: #e9dac9;
+}
+
+.conteudo__signin h2 {
+    margin: 15vh 0 10vh;
+       
+}
+
+.formulario_signin {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.lines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lines p {
+    margin: 2px;
+}
