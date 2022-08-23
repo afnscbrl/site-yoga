@@ -3,7 +3,7 @@ import * as React from 'react';
 export function Dashboard() {
     return(
         <>
-        <p>TUDO OK</p>
+        <p>AREA DO ALUNO - TUDO OK</p>
         </>
     )
 }

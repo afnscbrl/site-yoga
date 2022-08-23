@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kalam&family=Poppins:wght@100;200&family=Shadows+Into+Light&family=Varela&display=swap');
+
+.conteudo__navigation {
+    position: relative;
+    right: 1vw;
+    height: 10vh;
+    top: 1vh;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('./banner.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.secao__navigation {
+    margin-left: .5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.conteudo__navigation a {
+    color: #a33b12;
+}
+
+@media (max-width: 500px) {
+    .conteudo__navigation{
+        height: 10vh;
+        
+    }
+}

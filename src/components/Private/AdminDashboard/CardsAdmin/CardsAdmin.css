@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kalam&family=Poppins:wght@100;200&family=Shadows+Into+Light&family=Varela&display=swap');
+/* .cards__admin {
+    min-height: 25vw;
+} */
+
+@media (max-width: 500px) {
+    .cards__admin {
+        min-height: 45vw;
+    }
+}
+
+.cards__admin h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #a33b12;
+}

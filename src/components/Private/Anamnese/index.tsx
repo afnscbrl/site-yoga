@@ -30,7 +30,8 @@ export default function Anamnese() {
     const [experiencia, setExperiencia] = React.useState<string>("")
     const [anam, setAnam] = React.useState<object>(Anam)
     const [filhos, setFilhos] = React.useState<string>('')
-
+    axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('Token')}`
+    
     const handleChange = (event: SelectChangeEvent) => {
         setExperiencia(event.target.value);
         setAnam(e =>  { return { ...e, yogi: event.target.value}})
@@ -56,10 +57,6 @@ export default function Anamnese() {
         setAnam(e =>  { return { ...e, rotina: event.target.value}})
     }
 
-    // const yogiInput = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    //     event.stopPropagation()
-    //     setAnam(e =>  { return { ...e, yogi: event.target.value}})
-    // }
 
     const modalidadeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.stopPropagation()
@@ -102,9 +99,8 @@ export default function Anamnese() {
         event.stopPropagation()
         const token = localStorage.getItem('Token')
         const dados = Object.assign({}, anam, {token: token})
-        console.log(dados)
         try {
-            await axios.put(`${process.env.REACT_APP_LINK_HOST}alunas/anamnese` , dados).then((res: { status: any; }) => console.log(res.status))
+            await axios.put(`${process.env.REACT_APP_LINK_HOST}alunas/anamnese` , dados)
             navigate('/dashboard') 
         } catch (err: any) {
             // ADICIONAR CARD DE ERROR
