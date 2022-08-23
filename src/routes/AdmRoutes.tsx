@@ -3,25 +3,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AdminDashboard } from '../components/Private/AdminDashboard';
 import AlunaEdit from '../components/Private/AlunaEdit';
 import Alunas from '../components/Private/Alunas';
-import Anamnese from '../components/Private/Anamnese';
-import { Dashboard } from '../components/Private/Dashboard';
 import { NavigationBar } from '../components/Private/NavigationBar';
 import {Aulas} from '../components/Private/Aulas';
 import { UserContextProvider } from '../context/isAuth';
 
-const PrivateRoutes: React.FC = () => {
+const AdmRoutes: React.FC = () => {
 
     return (
 
         <BrowserRouter>
             <NavigationBar />
+
                 <Routes>
-                    <Route path='/anamnese' element={<Anamnese />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/admindashboard" element={<AdminDashboard />} />
+                    <Route path='/alunas' element={<Alunas />} />
+                    <Route path='/alunaedit' element={<AlunaEdit />} />
+                    <Route path='/aulasadm' element={<Aulas />} />
                 </Routes>
+
         </BrowserRouter>
 
     );
 };
 
-export default PrivateRoutes;
+export default AdmRoutes;
