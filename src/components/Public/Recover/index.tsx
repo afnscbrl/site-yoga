@@ -5,6 +5,7 @@ import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import axios from 'axios';
 require('dotenv').config()
 
+
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
     ref,
@@ -17,6 +18,8 @@ export default function Recover() {
 
     const [open, setOpen] = React.useState(false);
     const [alert, setAlert] = React.useState("")
+    axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('Token')}`
+    
 
     React.useEffect(() => {
         OnLoad()
@@ -39,6 +42,16 @@ export default function Recover() {
     const emailRecover = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         event.stopPropagation()
+
+        axios.interceptors.request.use(request => {
+            const token = localStorage.getItem('Token')
+
+            if(token) {
+                request.headers
+            }
+            return request
+        })
+        
 
         axios.post(`${process.env.REACT_APP_LINK_HOST}alunas/emailrecover`, email).then(() => {
             setAlert("Email enviado com sucesso!")

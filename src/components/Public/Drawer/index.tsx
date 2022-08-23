@@ -15,7 +15,7 @@ import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import ForumIcon from '@mui/icons-material/Forum';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import {userContext} from '../../../context/isAuth'
+import { userContext } from '../../../context/isAuth'
 import axios from 'axios';
 require('dotenv').config()
 
@@ -26,7 +26,7 @@ const options = {
   'Aulas': <SelfImprovementIcon />,
   'Depoimentos': <ForumIcon />,
   'Area do Aluno': <AccountCircleIcon />,
-  'Inscreva-se': <PersonAddAlt1Icon/>
+  'Inscreva-se': <PersonAddAlt1Icon />
 
 }
 
@@ -35,17 +35,21 @@ function Drawer() {
 
 
   let navigate = useNavigate()
-  const token = Object({'Token' : localStorage.getItem('Token')})
+  const token = Object({ 'Token': localStorage.getItem('Token') })
   const { auth, setAuth } = React.useContext(userContext)
+  const { user, setUser } = React.useContext(userContext)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const open = Boolean(anchorEl);
+  //Settin all axios requests with Authorization header
+  axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('Token')}`
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleMenuItemClick = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     index: number,
     option: string
   ) => {
@@ -55,15 +59,19 @@ function Drawer() {
       navigate('/')
     }
     else if (option === 'Area do Aluno') {
-      // SE JA LOGADO,  REDIRECIONAR PARA DASHBOARD
-      console.log(token.Token)
-      if(token.Token) {
+      if (token.Token) {
         axios.post(`${process.env.REACT_APP_LINK_HOST}alunas/logged`, token)
-        .then(res => { 
-          if(res.status === 202) {
-            setAuth(token.Token)
-            navigate('/dashboard')}})
-        .catch(() => navigate('/login'))
+          .then(res => {
+            if (res.status === 202) {
+              //VERIFICAR SE USER 'E ADMN REDIRECT CONDICIONAL
+              if (user === process.env.REACT_APP_EMAIL_ADM) {
+                navigate('/admindashboard')
+              } else {
+                navigate('/dashboard')
+              }
+            }
+          })
+          .catch(() => navigate('/login'))
       }
       navigate('/login')
     }
@@ -72,7 +80,7 @@ function Drawer() {
     }
     else if (option === 'Sobre Mim') {
       navigate('/about')
-    
+
     } else {
       navigate(`/${option.toLowerCase()}`)
     }
@@ -97,7 +105,7 @@ function Drawer() {
         <MenuIcon fontSize="large" />
       </Button>
 
-      <a href="https://www.instagram.com/raquelaraujo.yoga/" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/raquelaraujoyoga/" target="_blank" rel="noreferrer">
         <Button>
           <InstagramIcon fontSize='large' />
         </Button>

@@ -37,6 +37,7 @@ export default function Login() {
     let navigate = useNavigate()
 
     const [open, setOpen] = React.useState(false);
+    const token = Object({ 'Token': localStorage.getItem('Token') })
 
     const [values, setValues] = React.useState<State>({
         password: '',
@@ -49,6 +50,27 @@ export default function Login() {
     })
 
     const { auth, setAuth } = React.useContext(userContext)
+    const { user, setUser} = React.useContext(userContext)
+
+    React.useEffect(() => {
+        //SE TENTAR ACESSAR A PAGINA DE LOGIN E JA ESTIVER LOGADO, VAI PRO DASHBOARD
+        if (token.Token) {
+            axios.post(`${process.env.REACT_APP_LINK_HOST}alunas/logged`, token)
+                .then(res => {
+                    if (res.status === 202) {
+                        setAuth(token.Token)
+                        setUser(res.data)
+                        if (res.data === process.env.REACT_APP_EMAIL_ADM) {
+                            navigate('/admindashboard')
+                        } else {
+                            navigate('/dashboard')
+                        }
+                    }
+                })
+                .catch(() => navigate('/login'))
+        }
+    }, [])
+
 
     const handleChangeLogin =
         (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,16 +92,23 @@ export default function Login() {
         event.stopPropagation()
         axios.post(`${process.env.REACT_APP_LINK_HOST}alunas/login`, login).then(res => {
             if (res.status === 202) {
-                // localStorage.setItem('User', Object.values(login)[0]) // pega o email e salva no navegador
                 localStorage.setItem('Token', res.headers['authorization'])
                 setAuth(res.headers['authorization'])
-                if(res.headers.firstlogin) {
+                setUser(res.data)
+                if (res.headers.firstlogin) {
                     navigate('/anamnese')
                 } else {
-                    navigate('/dashboard') 
+                    if (res.data === process.env.REACT_APP_EMAIL_ADM) {
+                        navigate('/admindashboard')
+                    } else {
+                        navigate('/dashboard')
+                    }
                 }
             }
-        }).catch(() => setOpen(true))
+        }).catch(() => {
+
+            setOpen(true)
+        })
     }
 
     const handleClickShowPassword = () => {
